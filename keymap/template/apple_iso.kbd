@@ -1,0 +1,47 @@
+
+(defcfg
+  input (iokit-name)
+  output (kext)
+  fallthrough true
+)
+
+(defalias
+    nav  (layer-toggle extend))
+
+(defalias
+    spc_n (tap-hold-next-release 200 spc @nav)
+    ma    (tap-hold-next-release 200 a lmet)
+    ar    (tap-hold-next-release 200 r lalt)
+    cs    (tap-hold-next-release 200 s lctl)
+    st    (tap-hold-next-release 200 t lsft)
+
+    sn    (tap-hold-next-release 200 n rsft)
+    ce    (tap-hold-next-release 200 e rctl)
+    ai    (tap-hold-next-release 200 i ralt)
+    mo    (tap-hold-next-release 200 o rmet)
+) 
+
+(defsrc
+  nubs 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]
+  caps a    s    d    f    g    h    j    k    l    ;    '    \    ret
+  lsft grv  z    x    c    v    b    n    m    ,    .    /    rsft
+  fn lctl lalt lmet           spc             rmet ralt
+)
+
+(deflayer colemak-dhm
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    f    p    b    j    l    u    y    ;    [    ]
+  lctl @ma  @ar  @cs  @st  g    k    @sn  @ce  @ai  @mo  '    \    ret
+  lsft z    x    c    d    v    _    m    h    ,    .    /    rsft
+  lctl fn  lalt lmet          @spc_n           rmet ralt
+)
+
+(deflayer extend
+  _     _   _    _    _    _    _    _    _    _    _    _    _    bspc
+  _     _   _    _    _    _    _    _    _    _    _    _    _
+  lctl @ma  @ar  @cs  @st  g    k    lft  up   down rght _    _    ret
+  _     _    _    _    _    _    _    _    _    _    _    _    rsft
+  lctl fn lalt lmet           _              _    ralt
+)
+
