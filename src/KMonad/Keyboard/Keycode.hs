@@ -307,6 +307,7 @@ data Keycode
   | KeyMissionCtrl
   | KeySpotlight
   | KeyDictation
+  | KeyNonUSBackslash
 #endif
   deriving (Eq, Show, Bounded, Enum, Ord, Generic, Hashable)
 
@@ -409,9 +410,11 @@ aliases = Q.mkMultiMap
   , (KeyPlayPause,      ["pp"])
   , (KeyPreviousSong,   ["prev"])
 #ifdef darwin_HOST_OS
+  , (KeyFn,             ["fn"])
   , (KeyLaunchpad,      ["lp"])
   , (KeyMissionCtrl,    ["mctl"])
   , (KeySpotlight,      ["spot"])
   , (KeyDictation,      ["dict"])
+ -- , (KeyNonUSBackslash, ["102d", "lsgt", "nubs", "nonusbslash"])
 #endif
   ]
