@@ -378,7 +378,7 @@ aliases = Q.mkMultiMap
   , (KeyRightMeta,      ["rmeta", "rmet"])
   , (KeyBackspace,      ["bks", "bspc"])
   , (KeyCapsLock,       ["caps"])
-  , (Key102nd,          ["102d", "lsgt", "nubs"])
+  , (Key102nd,          ["102d", "lsgt"])
   , (KeyForward,        ["fwd"])
   , (KeyScrollLock,     ["scrlck", "slck"])
   , (KeyScrollUp,       ["scrup", "sup"])
@@ -415,6 +415,6 @@ aliases = Q.mkMultiMap
   , (KeyMissionCtrl,    ["mctl"])
   , (KeySpotlight,      ["spot"])
   , (KeyDictation,      ["dict"])
- -- , (KeyNonUSBackslash, ["102d", "lsgt", "nubs", "nonusbslash"])
+  , (KeyNonUSBackslash, ["nubs", "nonusbslash"])
 #endif
   ]
